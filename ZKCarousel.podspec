@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'ZKCarousel'
+  s.name             = 'ZKCarouselCustom'
   s.version          = '1.1.0'
   s.summary          = 'ZKCarousel is a simple carousel based on UICollectionView.'
 
