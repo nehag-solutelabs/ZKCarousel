@@ -99,6 +99,8 @@ public class ZKCarouselCell: UICollectionViewCell {
         imageView.image = slide.image
         titleLabel.text = slide.title
         descriptionLabel.text = slide.description
+        titleLabel.font = slide.titleFont
+        descriptionLabel.font = slide.descriptionFont
     }
 
 }
