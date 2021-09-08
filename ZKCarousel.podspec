@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 ZKCarousel is a simple carousel control built on top of a UICollectionView. It can be used for a number of implementations, most commonly used for some sort of authentication or landing screen.
                        DESC
 
-  s.homepage         = 'https://github.com/ZacharyKhan/ZKCarousel'
+  s.homepage         = 'https://github.com/neha275/ZKCarousel'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ZacharyKhan' => 'zachary.khan3@gmail.com' }
   s.source           = { :git => 'https://github.com/neha275/ZKCarousel.git', :tag => s.version.to_s }
