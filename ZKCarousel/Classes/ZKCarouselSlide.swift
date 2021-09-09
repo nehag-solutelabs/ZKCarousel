@@ -18,7 +18,7 @@ public struct ZKCarouselSlide {
                 title: String? = nil,
                 description: String? = nil,
                 titleFont: UIFont? = nil,
-                descriptionFont: UIFont?) {
+                descriptionFont: UIFont? = nil) {
         
         self.image = image
         self.title = title
