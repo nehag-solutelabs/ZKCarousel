@@ -38,6 +38,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .white
+        label.backgroundColor = .yellow
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -49,6 +50,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
+        label.backgroundColor = .systemPink
         label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -83,7 +85,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
         contentView.addSubview(descriptionLabel)
-        descriptionLabel.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 15).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 32).isActive = true
         descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
@@ -91,7 +93,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         contentView.addSubview(titleLabel)
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -8).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 8).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
     }
     
