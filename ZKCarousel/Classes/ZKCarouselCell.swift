@@ -86,7 +86,8 @@ public class ZKCarouselCell: UICollectionViewCell {
         descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30).isActive = true
         descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
-        descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16).isActive = true
+//        descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16).isActive = true
+        descriptionLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
    
         contentView.addSubview(titleLabel)
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
