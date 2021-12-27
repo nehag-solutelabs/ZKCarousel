@@ -92,8 +92,8 @@ public class ZKCarouselCell: UICollectionViewCell {
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 8).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20).isActive = true
+//        titleLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
     }
     
     private func parseData(forSlide slide: ZKCarouselSlide) {
