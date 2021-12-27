@@ -8,21 +8,21 @@
 import UIKit
 
 public class ZKCarouselCell: UICollectionViewCell {
-    
+
     // MARK: - Properties
     static let identifier = "carousel_slide_default_Cell"
-    
+
     public var slide : ZKCarouselSlide? {
         didSet {
             guard let slide = slide else {
                 print("ZKCarousel is unable to parse the ZKCarouselSlide that was provided.")
                 return
             }
-            
+
             parseData(forSlide: slide)
         }
     }
-    
+
     private lazy var imageView : UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -32,7 +32,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
-    
+
     private var titleLabel : UILabel = {
         let label = UILabel()
         label.adjustsFontSizeToFitWidth = true
@@ -42,70 +42,66 @@ public class ZKCarouselCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     private var descriptionLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .white
         label.textAlignment = .left
         label.numberOfLines = 0
-//        label.backgroundColor = .clear
+        label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     // MARK: - Default Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     public override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
         titleLabel.text = nil
         descriptionLabel.text = nil
     }
-    
+
     // MARK: - Actions
     private func setup() {
         backgroundColor = .clear
         clipsToBounds = true
-        
+
         contentView.addSubview(imageView)
         imageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         imageView.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
         imageView.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        
+
         contentView.addSubview(descriptionLabel)
-//        descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 60).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 32).isActive = true
         descriptionLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         descriptionLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -36).isActive = true
-        descriptionLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
-   
+
         contentView.addSubview(titleLabel)
         titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 16).isActive = true
         titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 8).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 55).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: -8).isActive = true
-        titleLabel.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        titleLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
     }
-    
+
     private func parseData(forSlide slide: ZKCarouselSlide) {
         imageView.image = slide.image
         titleLabel.text = slide.title
-        titleLabel.backgroundColor = .darkGray
         descriptionLabel.text = slide.description
         titleLabel.font = slide.titleFont
         descriptionLabel.font = slide.descriptionFont
-        descriptionLabel.backgroundColor = .gray
     }
 
 }
+
