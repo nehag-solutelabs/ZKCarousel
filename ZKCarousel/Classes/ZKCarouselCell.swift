@@ -39,7 +39,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = .white
         label.backgroundColor = .yellow
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -51,7 +51,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         label.textAlignment = .left
         label.numberOfLines = 0
         label.backgroundColor = .systemPink
-        label.backgroundColor = .clear
+//        label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -95,6 +95,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -16).isActive = true
         titleLabel.bottomAnchor.constraint(equalTo: descriptionLabel.topAnchor, constant: 8).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        titleLabel.backgroundColor = .yellow
     }
     
     private func parseData(forSlide slide: ZKCarouselSlide) {
@@ -103,6 +104,7 @@ public class ZKCarouselCell: UICollectionViewCell {
         descriptionLabel.text = slide.description
         titleLabel.font = slide.titleFont
         descriptionLabel.font = slide.descriptionFont
+        descriptionLabel.backgroundColor = .yellow
     }
 
 }
